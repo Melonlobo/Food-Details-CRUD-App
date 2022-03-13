@@ -8,7 +8,7 @@ const path = require('path');
 const server = express();
 
 dotenv.config({ path: 'config.env' });
-const PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 connectDB();
 
@@ -83,6 +83,6 @@ server.delete('/api/delete', (req, res) => {
 		});
 });
 
-server.listen(PORT, () => {
-	console.log(`http://localhost:${PORT}`);
+server.listen(port, () => {
+	console.log(`http://localhost:${port}`);
 });
