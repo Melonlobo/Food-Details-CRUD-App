@@ -21,7 +21,7 @@ const message = document.querySelector('.message');
 let updateRowNum;
 
 function getData() {
-	fetch('http://localhost:5000/menu')
+	fetch('/menu')
 		.then((data) => data.json())
 		.then((data) => {
 			menu = data;
@@ -320,7 +320,7 @@ function filterFunc(value, id) {
 
 function addItem() {
 	const data = getFormData('add-form');
-	fetch(`http://localhost:5000/api/add?item=${data[0]}`, {
+	fetch(`/api/add?item=${data[0]}`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -371,7 +371,7 @@ function updateItem(n) {
 	updateFormInputItem.removeAttribute('disabled');
 	const data = getFormData('update-form');
 	updateFormInputItem.setAttribute('disabled', 'disabled');
-	fetch(`http://localhost:5000/api/update?item=${data[0]}`, {
+	fetch(`/api/update?item=${data[0]}`, {
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json',
@@ -423,7 +423,7 @@ function getFormData(id) {
 }
 
 function deleteItem(query, n) {
-	fetch(`http://localhost:5000/api/delete?item=${query}`, {
+	fetch(`/api/delete?item=${query}`, {
 		method: 'DELETE',
 	})
 		.then((res) => {
