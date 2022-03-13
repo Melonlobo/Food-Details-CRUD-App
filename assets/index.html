@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Food details</title>
+</head>
+
+<body>
+    <div class="details">
+        <h1 class="title">Item Details</h1>
+        <h2 id="total-items">Total Items: 0</h2>
+        <div class="head">
+            <button id="add">Add Item +</button>
+            <form id="search-form">
+                <input type="search" name="search" id="search" placeholder="Search item here...">
+            </form>
+        </div>
+        <table>
+            <thead>
+                <th id="total-rows">ITEM</th>
+                <th>
+                    <label for="restaurants">RESTAURANT NAME</label>
+                    <select name="restaurants" id="restaurants">
+                        <option value="all">All</option>
+                    </select>
+                </th>
+                <th>
+                    <label for="catagories">CATAGORY</label>
+                    <select name="catagories" id="catagories">
+                        <option value="all">All</option>
+                    </select>
+                </th>
+                <th>
+                    <label for="food-types">FOOD TYPE</label>
+                    <select name="food-types" id="food-types">
+                        <option value="all">All</option>
+                    </select>
+                </th>
+                <th>
+                    <label for="availabilities">AVAILABILITY</label>
+                    <select name="availabilities" id="availabilities">
+                        <option value="all">All</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                    </select>
+                </th>
+                <th>PRICE (₹)</th>
+            </thead>
+        </table>
+    </div>
+    <div class="add hidden">
+        <header>
+            <button class="go-back">&lt; Go Back</button>
+            <h1 class="title">Add Item Details</h1>
+        </header>
+        <form action="/api/add" method="post" id="add-form">
+            <div class="group">
+                <label for="item">Item:</label>
+                <input type="text" id="item" name="item" autofocus required>
+            </div>
+            <div class="group">
+                <label for="food-type">Food Type:</label>
+                <input type="text" id="food-type" name="foodType" required>
+            </div>
+            <div class="group">
+                <label for="catagory">Catagory:</label>
+                <input type="text" id="catagory" name="catagory" required>
+            </div>
+            <div class="group">
+                <label for="cuisine-type">Cuisine Type:</label>
+                <input type="text" id="cuisine-type" name="cuisineType" required>
+            </div>
+            <div class="group">
+                <label for="rating">Rating:</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required>
+            </div>
+            <div class="group">
+                <label for="calories">Total calories/serving:</label>
+                <input type="number" id="calories" name="totalCalories" min="0" required>
+            </div>
+            <div class="group">
+                <label for="img-src">Image Source:</label>
+                <input type="url" name="imgSrc" id="img-src" required>
+            </div>
+            <div class="group">
+                <label for="price">Price:</label>
+                <input type="number" name="price" id="price" min="0" required>
+            </div>
+            <fieldset class="group groupB">
+                <legend>Location:</legend>
+                <div>
+                    <label for="restaurant">Restaurant name:</label>
+                    <input type="text" id="restaurant" name="restaurant" required>
+                </div>
+                <div>
+                    <label for="">Place:</label>
+                    <input type="text" id="place" name="place" required>
+                </div>
+                <div>
+                    <label for="PIN-code">PIN code:</label>
+                    <input type="number" name="PINcode" id="PIN-code" min="0" required>
+                </div>
+            </fieldset>
+            <div class="group availability">
+                <div class="available">
+                    <label for="available">Available</label>
+                    <input type="radio" name="availability" id="available" value="true" checked>
+                </div>
+                <div class="unavailable">
+                    <label for="unavailable">Unavailable</label>
+                    <input type="radio" name="availability" id="unavailable" value="false">
+                </div>
+            </div>
+        </form>
+        <div class="btn-group">
+            <button id="add-button" form="add-form" type="submit">Submit</button>
+            <button id="reset" form="add-form" type="reset">Reset</button>
+        </div>
+    </div>
+    <div class="update hidden">
+        <header>
+            <button class="go-back">&lt; Go Back</button>
+            <h1 class="title">Update Item Details</h1>
+        </header>
+        <form id="update-form">
+            <div class="group">
+                <label for="item">Item:</label>
+                <input type="text" id="update-item" name="item" disabled required>
+            </div>
+            <div class="group">
+                <label for="food-type">Food Type:</label>
+                <input type="text" id="update-food-type" name="foodType" required>
+            </div>
+            <div class="group">
+                <label for="catagory">Catagory:</label>
+                <input type="text" id="update-catagory" name="catagory" required>
+            </div>
+            <div class="group">
+                <label for="cuisine-type">Cuisine Type:</label>
+                <input type="text" id="update-cuisine-type" name="cuisineType" required>
+            </div>
+            <div class="group">
+                <label for="rating">Rating:</label>
+                <input type="number" id="update-rating" name="rating" min="1" max="5" required>
+            </div>
+            <div class="group">
+                <label for="calories">Total calories/serving:</label>
+                <input type="number" id="update-calories" name="totalCalories" min="1" required>
+            </div>
+            <div class="group">
+                <label for="img-src">Image Source:</label>
+                <input type="url" name="imgSrc" id="update-img-src" required>
+            </div>
+            <div class="group">
+                <label for="price">Price:</label>
+                <input type="number" name="price" id="update-price" min="1" required>
+            </div>
+            <fieldset class="group groupB">
+                <legend>Location:</legend>
+                <div>
+                    <label for="restaurant">Restaurant name:</label>
+                    <input type="text" id="update-restaurant" name="restaurant" required>
+                </div>
+                <div>
+                    <label for="">Place:</label>
+                    <input type="text" id="update-place" name="place" required>
+                </div>
+                <div>
+                    <label for="PIN-code">PIN code:</label>
+                    <input type="number" name="PINcode" id="update-PIN-code" min="1" required>
+                </div>
+            </fieldset>
+            <div class="group availability">
+                <div class="available">
+                    <label for="available">Available</label>
+                    <input type="radio" name="availability" id="update-available" value="true">
+                </div>
+                <div class="unavailable">
+                    <label for="unavailable">Unavailable</label>
+                    <input type="radio" name="availability" id="update-unavailable" value="false">
+                </div>
+            </div>
+        </form>
+        <button id="update-button" form="update-form" type="submit">Submit</button>
+    </div>
+    <div class="message hidden"></div>
+</body>
+
+</html>

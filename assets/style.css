@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 2rem;
+    width: 90vw;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+}
+
+header {
+    height: 10vh;
+    margin-top: 2rem;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.title {
+    color: red;
+    text-align: center;
+    margin: auto;
+    font-size: 2.5rem;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    position: relative;
+}
+
+#search,
+.suggestions {
+    font-size: 1.5rem;
+    padding: .2rem .5rem;
+    width: 40vw;
+    background-color: #fff;
+}
+
+.suggestions {
+    list-style: none;
+    max-height: 8rem;
+    border: 1px solid #000;
+    padding: 0;
+    position: absolute;
+    top: 2.2rem;
+    right: 0;
+    z-index: 2;
+    overflow-y: scroll;
+}
+
+.suggestions>li {
+    width: 100%;
+    padding: .2rem .5rem;
+    border: 1px solid #000;
+    text-transform: capitalize;
+}
+
+.suggestions>li:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.go-back {
+    color: #000;
+    background-color: #fff;
+    font-size: 1.5rem;
+    padding: .3rem;
+    height: fit-content;
+}
+
+.go-back:hover {
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+}
+
+#add {
+    color: #fff;
+    background-color: rgba(255, 0, 0, .7);
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    border: none;
+}
+
+#add:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+
+thead {
+    height: 3rem;
+    background-color: rgb(0, 255, 0, .6);
+}
+
+th,
+td {
+    border: 1px solid white;
+    padding: .3rem;
+    color: #000;
+    text-align: center;
+}
+
+select {
+    font-size: 1.2rem;
+}
+
+tr:nth-child(even) {
+    height: 2.5rem;
+    background-color: rgba(255, 0, 0, .2);
+}
+
+tr:nth-child(odd) {
+    height: 2.5rem;
+    background-color: rgba(255, 0, 0, .1);
+}
+
+tr:hover {
+    background-color: rgba(255, 0, 0, .4);
+}
+
+td {
+    color: #000;
+    text-transform: capitalize;
+}
+
+#update,
+#delete {
+    color: black;
+    text-transform: uppercase;
+}
+
+#update:hover,
+#delete:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+#update:hover {
+    background-color: blue;
+}
+
+#delete:hover {
+    background-color: red;
+}
+
+#add-form,
+#update-form {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.group {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.group>input {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+}
+
+.groupB {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.groupB>div {
+    padding: .5rem;
+}
+
+.groupB>div>input {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+}
+
+.availability {
+    display: flex;
+}
+
+.available,
+.unavailable {
+    padding: 1rem;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+#add-button,
+#update-button,
+#reset {
+    font-size: 1.5rem;
+    height: 3rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    color: #000;
+    background-color: #fff;
+    border-radius: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-button:hover,
+#update-button:hover,
+#reset:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.message {
+    min-width: 25vw;
+    max-width: 90vw;
+    min-height: 25vh;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    color: green;
+    padding: 1rem;
+    text-transform: capitalize;
+    box-shadow: 0 0 10px 1px #000;
+}
+
+input {
+    text-transform: lowercase;
+}
+
+.hidden {
+    display: none;
+}
