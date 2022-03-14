@@ -9,7 +9,7 @@
 
 ### Create an account in MongoDB, if you don't one, and get your MONGO_URI
 
-### Create a .env file
+### Create a config.env file
 ### Set PORT and MONGO_URI
 sample:
 ```
@@ -17,7 +17,7 @@ PORT=port number of your choice
 MONGO_URI=your MONGO_URI here
 ```
 
-### Then start the server by running following command in one terminal.
+### Then start the server by running following command in the terminal.
 `npm start`
 
 ***_HAPPY CODING_*** 
